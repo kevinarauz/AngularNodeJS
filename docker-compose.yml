@@ -1,0 +1,19 @@
+version: "1"
+services:
+  web:
+    container_name: clienteapp
+    restart: always
+    build: .
+    ports:
+      - "3700:3700"
+    links:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+  mongo:
+    container_name: clienteapp
+    image: mongo
+    ports: 
+      -"27017:27017"
+    logging:
+      drivers: none
