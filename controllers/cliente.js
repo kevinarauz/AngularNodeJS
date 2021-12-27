@@ -44,6 +44,20 @@ var controller = {
 		});
 	},
 
+	getClienteCedula: function(req, res){
+		var cedula = req.params.cedula;
+		if(cedula == null) return res.status(404).send({message: 'El cliente no tiene un identificador valido.'});
+		
+		Cliente.findOne({cedula}, (err, cliente) => {
+			if(err) return res.status(500).send({message: 'Error al devolver los datos.'});
+
+			if(!cliente) return res.status(404).send({message: 'El cliente no existe.'});
+            
+			return res.status(200).json(cliente);
+
+		});
+	},
+
 	getClientes: function(req, res){
 
 		Cliente.find({}).sort({_id: -1}).exec((err, clientes) => {
