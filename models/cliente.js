@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
 
 var ClienteSchema = Schema({
 	_id: mongoose.Types.ObjectId,
-    cedula: Number,
+    cedula: String,
 	nombres: String,
 	apellidos: String,
 	edad: Number,

@@ -1,7 +1,7 @@
 version: "1"
 services:
   web:
-    container_name: clienteapp
+    container_name: clientesApi
     restart: always
     build: .
     ports:
@@ -11,7 +11,7 @@ services:
     volumes:
       - .:/usr/src/app
   mongo:
-    container_name: clienteapp
+    container_name: mongo
     image: mongo
     ports: 
       -"27017:27017"
