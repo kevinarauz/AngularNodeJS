@@ -75,8 +75,6 @@ var controller = {
 
 	deleteCliente: function(req, res){
 		var clienteId = new mongoose.Types.ObjectId(req.params.id);
-		console.log(clienteId);
-		console.log("cliente");
 		Cliente.findByIdAndRemove(clienteId, (err, clienteRemoved) => {
 			if(err) return res.status(500).send({message: 'No se ha podido borrar el cliente'});
 
