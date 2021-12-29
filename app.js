@@ -1,8 +1,10 @@
 'use strict'
 
+//Cargar modulos de node para crear el servidor
 var express = require('express');
 var bodyParser = require('body-parser');
 
+//Ejecutar express
 var app = express();
 
 // cargar archivos rutas
@@ -21,9 +23,8 @@ app.use((req, res, next) => {
     next();
 });
 
-// rutas
+// Añadimos prefijo a las rutas
 app.use('/api', cliente_routes);
 
-
-// exportar
+// exportar modulo actual
 module.exports = app;
