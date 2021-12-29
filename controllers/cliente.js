@@ -81,7 +81,7 @@ var controller = {
 			if(!clienteUpdated) return res.status(404).send({message: 'No existe el cliente para actualizar'});
 
 			return res.status(200).send({
-				cliente: clienteUpdated
+				message: "Cliente actualizado con exito"
 			});
 		});
 
@@ -94,7 +94,9 @@ var controller = {
 
 			if(!clienteRemoved) return res.status(404).send({message: "No se puede eliminar ese cliente."});
 
-			return res.status(200).send(clienteRemoved);
+			return res.status(200).send({
+				message: "Cliente eliminado con exito"
+			});
 		});
 	}
 
