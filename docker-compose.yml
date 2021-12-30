@@ -15,5 +15,4 @@ services:
     image: mongo
     ports: 
       - '27018:27017'
-    logging:
-      driver: none
+    command: mongod --quiet --logpath /dev/null

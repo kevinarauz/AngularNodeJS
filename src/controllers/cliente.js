@@ -119,6 +119,6 @@ const clientePaises = async () =>{
 			{ $unwind: "$clientePais" }
 		]
 	)
-	console.log("Resultado: "+resultado);
+	//console.log("Resultado: "+resultado);
 }
 clientePaises();
