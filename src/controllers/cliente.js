@@ -5,7 +5,6 @@ var fs = require('fs');
 var path = require('path');
 const { Console } = require('console');
 var mongoose = require('mongoose');
-
 var controller = {
 
 	saveCliente: function(req, res){
@@ -103,3 +102,23 @@ var controller = {
 };
 
 module.exports = controller;
+
+
+const clientePaises = async () =>{
+	const resultado = await Cliente.aggregate(
+		[
+			{
+				$lookup:
+				{
+					from: "clientes", //2 segunda capa
+					localField: "pais", //1 capa publicacion
+					foreignField: "_id", //2 segunda paga
+					as: "clientePais" //1
+				}
+			},
+			{ $unwind: "$clientePais" }
+		]
+	)
+	console.log("Resultado: "+resultado);
+}
+clientePaises();

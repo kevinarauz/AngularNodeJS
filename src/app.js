@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // cargar archivos rutas
-var cliente_routes = require('./routes/cliente');
+var cliente_routes = require('../src/routes/cliente');
 
 // middlewares
 app.use(bodyParser.urlencoded({extended:false}));

@@ -1,5 +1,7 @@
 #Get node image from dockerhub
 FROM node:14
+
+RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package*.json ./
 
@@ -9,4 +11,4 @@ COPY . .
 
 EXPOSE 3700
 
-CMD ["node", "app.js", "dev"]
+CMD [ "npm", "run", "dev" ]
