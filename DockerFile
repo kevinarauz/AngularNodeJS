@@ -9,6 +9,7 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 3700
+ENV PORT 3700
+EXPOSE $PORT
 
 CMD [ "npm", "run", "dev" ]
