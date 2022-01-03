@@ -10,9 +10,9 @@ app.get('/', function (req, res) {
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://mongo:27017/clientesApi',{
+mongoose.connect('mongodb://localhost:27017/clientesApi',{
 	useNewUrlParser: true,
-	useUnifiedTopology: true
+	useUnifiedTopology: true,
 })
         .then((db) => {
 			// Creacion del servidor
